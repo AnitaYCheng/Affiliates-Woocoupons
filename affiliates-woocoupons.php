@@ -14,15 +14,15 @@
  *
  * This header and all notices must be kept intact.
  *
- * @author Antonio Blanco	
+ * @author Antonio Blanco
  * @package affiliates-woocoupons
- * @since affiliates-woocoupons 1.0
+ * @since affiliates-woocoupons 1.1
  *
- * Plugin Name: Affiliates WooCoupons
+ * Plugin Name: Affiliates WooCoupons Link
  * Plugin URI: http://itthinx.com
  * Description: Applies Woocommerce coupon automatically if you are referred by an affiliate that has a coupon assigned.
- * Author: eggemplo
- * Version: 1.0
+ * Author: eggemplo, modified by Anita Cheng
+ * Version: 1.1
  * Author URI: http://www.eggemplo.com
 **/
 
@@ -81,7 +81,7 @@ class Affiliates_Woocoupons_Plugin {
 			// Add coupon
 			if (!$woocommerce->cart->add_discount(sanitize_text_field($coupon_code))) {
 				
-				$woocommerce->show_messages();
+				$woocommerce->clear_messages();	
 			
 			} else {
 				
